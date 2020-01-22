@@ -1,0 +1,1 @@
+# mozilla-JavaScript-objects
