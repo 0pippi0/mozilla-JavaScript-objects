@@ -112,5 +112,21 @@
 
           alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
       };
+
+      var teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');
+
+      // Student class
+      function Student(first, last, age, gender, interests) {
+          Person.call(this, first, last, age, gender, interests);
+      }
+
+      Student.prototype = Object.create(Person.prototype);
+      Student.prototype.constructor = Student;
+
+      Student.prototype.greeting = function() {
+          alert('Yo! I\'m ' + this.name.first + '.');
+      };
+
+      let Student1 = new Student('Liz', 'Sheppard', 17, 'female', ['ninjitsu', 'air cadets']);
     </script>
 </html>
