@@ -96,5 +96,7 @@
           this.subject = subject;
       }
 
+      Teacher.prototype = Object.create(Person.prototype);
+      Teacher.prototype.constructor = Teacher;
     </script>
 </html>
