@@ -114,6 +114,20 @@ EvilCircle.prototype.checkBounds = function() {
   }
 };
 
+// define EvilCircle setControls method
+let _this = this;
+window.onkeydown = function(e) {
+  if (e.key === 'a') {
+    _this.x -= _this.velX;
+  } else if (e.key === 'd') {
+    _this.x += _this.velX;
+  } else if (e.key === 'w') {
+    _this.y -= _this.velY;
+  } else if (e.key === 's') {
+    _this.y += _this.velY;
+  }
+}
+
 // define array to store balls and populate it
 let balls = [];
 
