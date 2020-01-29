@@ -75,6 +75,26 @@ Ball.prototype.collisionDetect = function() {
   }
 };
 
+// define EvilCircle constructor, inheriting from Shape
+function EvilCircle(x, y, exists) {
+  Shape.call(this, x, y, 20, 20, exists);
+
+  this.color = 'white';
+  this.size = 10;
+}
+
+EvilCircle.prototype = Object.create(Shape.prototype);
+EvilCircle.prototype.constructor = EvilCircle;
+
+// define EvilCircle draw method
+EvilCircle.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.strokeStyle =this.color;
+  ctx.lineWidth = 3;
+  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+  ctx.stroke();
+}
+
 // define array to store balls and populate it
 let balls = [];
 
