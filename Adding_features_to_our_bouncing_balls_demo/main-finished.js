@@ -1,5 +1,4 @@
 // define variable for ball count paragraph
-
 const para = document.querySelector('p');
 let count = 0;
 
@@ -92,7 +91,6 @@ function EvilCircle(x, y, exists) {
 EvilCircle.prototype = Object.create(Shape.prototype);
 EvilCircle.prototype.constructor = EvilCircle;
 
-
 // define EvilCircle draw method
 EvilCircle.prototype.draw = function() {
   ctx.beginPath();
@@ -101,7 +99,6 @@ EvilCircle.prototype.draw = function() {
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
   ctx.stroke();
 };
-
 
 // define EvilCircle checkBounds method
 EvilCircle.prototype.checkBounds = function() {
@@ -176,7 +173,6 @@ while(balls.length < 25) {
   para.textContent = 'Ball count: ' + count;
 }
 
-
 // define loop that keeps drawing the scene constantly
 let evil = new EvilCircle(random(0,width), random(0,height), true);
 evil.setControls();
@@ -199,7 +195,6 @@ function loop() {
 
   requestAnimationFrame(loop);
 }
-
 
 
 loop();
